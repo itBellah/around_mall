@@ -29,7 +29,7 @@ export default {
         {
           image: require('../assets/images/menu1.png'),
           title: '新闻资讯',
-          url: '/news'
+          url: '/newslist'
         },
         {
           image: require('../assets/images/menu2.png'),

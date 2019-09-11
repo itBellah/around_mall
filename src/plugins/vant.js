@@ -16,7 +16,6 @@ import {
   SubmitBar,
   Tab,
   Tabs,
-  Toast,
   Card,
   Stepper
 } from 'vant'
@@ -39,4 +38,13 @@ Vue.use(Button)
   .use(Tabs)
   .use(Card)
   .use(Stepper)
+import {Tag, PullRefresh, List, Cell, Loading, Toast} from 'vant'
+import 'vant/lib/index.css';
+
+// 挂载 Button 组件
+Vue.use(Tag)
+  .use(PullRefresh)
+  .use(List)
+  .use(Cell)
+  .use(Loading)
   .use(Toast)
