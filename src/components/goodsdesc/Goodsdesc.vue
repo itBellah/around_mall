@@ -19,15 +19,17 @@ export default {
   data() {
     return {
       // 存放请求回来的照片
-      imgList: []
+      imgList: [],
+      shopid : 0
     }
   },
   created() {
+    this.shopid = window.localStorage.getItem('shopId')
     this.getImgList()
   },
   methods: {
     async getImgList() {
-      let { data: res } = await this.$http.get('/api/goods/getdesc/87')
+      let { data: res } = await this.$http.get('/api/goods/getdesc/'+this.shopid)
       if (res.status !== 0) {
         console.log('请求图片失败')
       }

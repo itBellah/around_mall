@@ -38,17 +38,20 @@ export default {
         content: ''
       },
       // 存放评论详情信息的
-      CommentsList: []
+      CommentsList: [],
+      // 传递的id
+      shopid : 0
     }
   },
   created() {
+    this.shopid = window.localStorage.getItem('shopId')
     this.getGoodsComments()
   },
   methods: {
     // 获取评论列表
     async getGoodsComments() {
       let { data: res } = await this.$http.get(
-        '/api/getcomments/43?pageindex=' + this.pageindex
+        '/api/getcomments/'+this.shopid+'?pageindex=' + this.pageindex
       )
       if (res.status !== 0) {
         console.log('获取评论信息失败')
@@ -62,7 +65,7 @@ export default {
         return true
       }
       let { data: res } = await this.$http.post(
-        '/api/postcomment/43',
+        '/api/postcomment/'+this.shopid,
         this.addForm
       )
       this.CommentsList.push(res.message)
@@ -83,7 +86,7 @@ export default {
     // 加载更多的
     async getMore() {
       let { data: res } = await this.$http.get(
-        '/api/getcomments/43?pageindex=' + ++this.pageindex
+        '/api/getcomments/'+ this.shopid +'pageindex=' + ++this.pageindex
       )
       this.CommentsList.push(...res.message)
     }

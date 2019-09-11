@@ -10,6 +10,7 @@
       <!-- 内容主体区域 -->
       <div v-html="deta.content" class="box_content"></div>
     </div>
+    <my-comments></my-comments>
   </div>
 </template>
 

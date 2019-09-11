@@ -46,7 +46,7 @@
     <van-divider v-show="zan">暂无搜索历史</van-divider>
     <!-- 对话框 -->
     <van-dialog v-model="show" title="警告" show-cancel-button @confirm="con" @cancel="can">
-      <div>是否删除该商品？</div>
+      <div>是否删除该记录？</div>
     </van-dialog>
     <my-footer></my-footer>
   </div>
@@ -78,9 +78,11 @@ export default {
   },
   created() {
     this.getSeachlist();
-
+    //从本地存储获取数据
     let arrs = JSON.parse(window.localStorage.getItem("key"));
-    this.arr = arrs;
+    //判断是否是个空数组  
+    this.arr = arrs||[];
+    // console.log(arrs)
   },
   methods: {
     // 获取搜索列表
@@ -109,21 +111,16 @@ export default {
     // 回车搜索
     async onSearch() {
       if (this.value.trim().length === 0) return this.$toast("请输入内容");
-      // 每次搜索都将输入框的值放入数组中
+      // 每次搜索都将arr数组中的数据进行过滤  进行判断 是否存在
       let newArr = this.arr.filter(v => {
         return v == this.value;
       });
+      console.log(newArr)
       if (this.value == newArr.join()) return;
 
       this.arr.unshift(this.value);
       // 将数据保存在本地存储中
       window.localStorage.setItem("key", JSON.stringify(this.arr));
-
-      // console.log(arrs);
-
-      //  this.arr = arrs
-      // 历史页面隐藏
-
       this.lishi = false;
       // 数据页面展示
       this.shuju = true;
@@ -133,15 +130,12 @@ export default {
       this.show = true;
       let { data: res } = await this.$http.get("/api/delproduct/" + id);
       if (res.status !== 0) return this.$notify("删除失败");
-      // this.confirm()
-      // console.log(res);
     },
     // 点击确定按钮时
     con() {
       console.log(123);
       this.$notify({ type: "success", message: "删除成功" });
       this.getSeachlist();
-      // this.$notify.primary('删除成功')
     },
     // 点击取消按钮时
     can() {
@@ -180,11 +174,16 @@ export default {
 }
 
 .van-dialog__content {
+  padding-top:10px;
   text-align: center;
   height: 40px;
   line-height: 40px;
   font-size: 14px;
   color: #7d7e80;
+  text-align: center;
+  div{
+    text-align:center;
+  }
 }
 .van-tag {
   margin: 20px;
