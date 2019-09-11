@@ -9,6 +9,8 @@ import {
     Dialog,
     Divider,
   Button,
+  Row,
+  Col,
   Tab,
   Tabs,
   List,
@@ -36,23 +38,23 @@ import {
 import 'vant/lib/index.css'
 
 Vue.use(Search)
-Vue.use(CellGroup)
-Vue.use(Button)
-Vue.use(Notify)
-Vue.use(SwipeCell)
-Vue.use(Dialog)
-Vue.use(Divider)
+  .use(CellGroup)
+  .use(Button)
+  .use(Notify)
+  .use(SwipeCell)
+  .use(Dialog)
+  .use(Row)
+  .use(Col)
+  .use(PullRefresh)
+  .use(Cell)
+  .use(Divider)
   .use(Tab)
   .use(Tabs)
   .use(List)
-  .use(Cell)
   .use(Image)
   .use(Grid)
   .use(GridItem)
-  .use(Lazyload)
   .use(Overlay)
-  .use(Swipe)
-  .use(SwipeItem)
   .use(ImagePreview)
   .use(NavBar)
   .use(Tabbar)
@@ -70,8 +72,6 @@ Vue.use(Divider)
   .use(Card)
   .use(Stepper)
   .use(Tag)
-  .use(PullRefresh)
   .use(List)
-  .use(Cell)
   .use(Loading)
   .use(Toast)

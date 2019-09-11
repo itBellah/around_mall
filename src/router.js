@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './components/Home.vue'
 import Index from './components/Index.vue'
+import List from './components/goods/List.vue'
+import GoodsDetail from './components/goods/Detail.vue'
 import Member from './components/member/Member.vue'
 import Shopcar from './components/shopcar/Shopcar.vue'
 import Contact from './components/contact/Contact.vue'
@@ -51,7 +53,9 @@ const router = new Router({
           path: '/photo/Info/:id',
           component: photoInfor,
           props: true
-        }
+        },
+        { path: '/goods/list', component: List },
+        { path: '/goods/detail/:id', component: GoodsDetail }
       ]
     },
     {

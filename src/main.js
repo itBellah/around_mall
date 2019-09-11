@@ -7,7 +7,6 @@ import Footer from './components/footer/Footer.vue'
 import './assets/font/iconfont.css'
 // 引入全局样式
 import './assets/state.css'
-
 // 导入按需加载的 vant 组件
 import './plugins/vant'
 
@@ -34,7 +33,6 @@ Vue.filter('dateFormat', function (valStr) {
 // 挂载使用全局组件
 Vue.component('my-header', Header)
 Vue.component('my-footer', Footer)
-
 Vue.config.productionTip = false
 
 // 格式化时间的过滤器
@@ -64,6 +62,5 @@ Vue.filter('dateFormat', valStr => {
   const hh = (date.getHours() + '').padStart(2, '0')
   const mm = (date.getMinutes() + '').padStart(2, '0')
   const ss = (date.getSeconds() + '').padStart(2, '0')
-  // return yyyy - mm - dd - hh - mm - ss
   return `${y} - ${m} - ${dd} - ${hh} -${mm}- ${ss}`
 })

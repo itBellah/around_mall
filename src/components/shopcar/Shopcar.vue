@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     // 点击提交按钮的回调函数
-    onSubmit() {
+    onSubmit () {
       this.$toast({
         message: '提交成功',
         icon: 'like-o'
