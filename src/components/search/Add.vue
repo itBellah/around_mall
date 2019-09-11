@@ -1,7 +1,7 @@
 <template>
   <div>
     <my-header></my-header>
-    
+
     <!-- 搜索框 -->
     <div class="box">
       <van-search placeholder="请输入商品名称" v-model="name" @search="onSearch" />
