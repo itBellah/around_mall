@@ -1,0 +1,9 @@
+.nav .van-grid-item__content {
+  padding: 16px 8px 0;
+}
+.nav .van-image__img {
+  width: 60px;
+}
+.nav p {
+  font-size: 14px;
+}

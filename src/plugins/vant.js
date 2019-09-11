@@ -3,30 +3,66 @@ import Vue from 'vue'
 // 导入 Button 组件
 import {
   Button,
-  List,
   Row,
   Col,
-  PullRefresh,
+  Divider,
+  Tab,
+  Tabs,
+  List,
   Cell,
+  Image,
+  Grid,
+  GridItem,
+  Lazyload,
+  Overlay,
   Swipe,
   SwipeItem,
-  Lazyload,
-  Divider,
+  ImagePreview,
+  NavBar,
+  Tabbar,
+  TabbarItem,
+  Icon,
+  SubmitBar,
+  Card,
   Stepper,
+  Tag,
+  PullRefresh,
+  Loading,
   Toast
 } from 'vant'
 import 'vant/lib/index.css'
 
 // 挂载 Button 组件
 Vue.use(Button)
-Vue.use(List)
 Vue.use(Row)
 Vue.use(Col)
 Vue.use(PullRefresh)
 Vue.use(Cell)
-Vue.use(Swipe)
-Vue.use(SwipeItem)
-Vue.use(Lazyload)
 Vue.use(Divider)
-Vue.use(Stepper)
-Vue.use(Toast)
+  .use(Tab)
+  .use(Tabs)
+  .use(List)
+  .use(Image)
+  .use(Grid)
+  .use(GridItem)
+  .use(Overlay)
+  .use(ImagePreview)
+  .use(NavBar)
+  .use(Tabbar)
+  .use(TabbarItem)
+  .use(Swipe)
+  .use(SwipeItem)
+  .use(Lazyload)
+  .use(Grid)
+  .use(GridItem)
+  .use(Image)
+  .use(Icon)
+  .use(SubmitBar)
+  .use(Tab)
+  .use(Tabs)
+  .use(Card)
+  .use(Stepper)
+  .use(Tag)
+  .use(List)
+  .use(Loading)
+  .use(Toast)
