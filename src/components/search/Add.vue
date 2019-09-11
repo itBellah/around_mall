@@ -27,7 +27,7 @@ export default {
     async add() {
       if (this.name.length === 0) return this.$notify("请输入内容");
       // let name = this.value
-      console.log(this.name);
+      // console.log(this.name);
       //  name = this.name
       let { data: res } = await this.$http.post("/api/addproduct", {
         name: name
@@ -41,7 +41,7 @@ export default {
       if (this.name.trim().length === 0)
         return this.$notify.success("请输入内容");
       // let name = this.value
-      console.log(this.name);
+      // console.log(this.name);
       //  name = this.name
       let { data: res } = await this.$http.post("/api/addproduct", {
         name: name

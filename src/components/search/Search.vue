@@ -86,7 +86,7 @@ export default {
     async getSeachlist() {
       let { data: res } = await this.$http.get("/api/getprodlist");
       this.seachList = res.message;
-      console.log(res);
+      // console.log(res);
     },
     // 点击返回按钮
     onClickLeft() {
@@ -148,7 +148,7 @@ export default {
     },
     // 点击tag时
     tag(i) {
-      console.log(i);
+      // console.log(i);
 
       this.value = i;
     },
