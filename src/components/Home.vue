@@ -1,13 +1,15 @@
 <template>
   <div class="home">
-  
-    <router-view/>
+
+    <my-header></my-header>
+    <main>
+      <router-view />
+    </main>
+    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
-// import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'home',
   components: {

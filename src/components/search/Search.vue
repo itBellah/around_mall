@@ -48,6 +48,7 @@
     <van-dialog v-model="show" title="警告" show-cancel-button @confirm="con" @cancel="can">
       <div>是否删除该商品？</div>
     </van-dialog>
+    <my-footer></my-footer>
   </div>
 </template>
 
