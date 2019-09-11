@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <van-row>
-      <van-col :span="4">
+      <van-col>
         <h4>发表评论</h4>
       </van-col>
     </van-row>
@@ -54,12 +54,10 @@ export default {
         console.log('获取评论信息失败')
       }
       this.CommentsList = res.message
-      // console.log(res.message)
     },
     // 添加评论列表
     async addComment() {
       if (this.addForm.content.trim().length === 0) {
-        // console.log(123);
         this.$toast('留言不能为空')
         return true
       }
@@ -87,7 +85,6 @@ export default {
       let { data: res } = await this.$http.get(
         '/api/getcomments/43?pageindex=' + ++this.pageindex
       )
-      // console.log(res)
       this.CommentsList.push(...res.message)
     }
   }
