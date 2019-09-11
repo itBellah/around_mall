@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h3>这是首页</h3>
+  
     <router-view/>
   </div>
 </template>
