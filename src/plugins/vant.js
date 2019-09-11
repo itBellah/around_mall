@@ -1,11 +1,15 @@
-// 初始化 vant.js
+
 import Vue from 'vue'
-// 导入 Button 组件
-import {
+import 'vant/lib/index.css'
+import {  
+    Search,
+    CellGroup,
+    SwipeCell,
+    Dialog,
+    Divider,
   Button,
   Row,
   Col,
-  CellGroup,
   Field,
   Notify,
   Tab,
@@ -35,18 +39,17 @@ import {
 import 'vant/lib/index.css'
 
 // 挂载 Button 组件
-Vue.use(Row).use(Col).use(CellGroup).use(Field).use(List).use(Notify).use(Toast)
+Vue.use(Search).use(Col).use(CellGroup).use(Field).use(List).use(Notify).use(Toast)
 Vue.use(Button)
   .use(Tab)
   .use(Tabs)
+  .use(SwipeCell)
+  .use(Dialog)
+  .use(Row)
   .use(Cell)
+  .use(Divider)
   .use(Image)
-  .use(Grid)
-  .use(GridItem)
-  .use(Lazyload)
   .use(Overlay)
-  .use(Swipe)
-  .use(SwipeItem)
   .use(ImagePreview)
   .use(NavBar)
   .use(Tabbar)
@@ -56,14 +59,10 @@ Vue.use(Button)
   .use(Lazyload)
   .use(Grid)
   .use(GridItem)
-  .use(Image)
   .use(Icon)
   .use(SubmitBar)
-  .use(Tab)
-  .use(Tabs)
   .use(Card)
   .use(Stepper)
   .use(Tag)
   .use(PullRefresh)
-  .use(Cell)
   .use(Loading)

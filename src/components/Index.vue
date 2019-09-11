@@ -45,7 +45,7 @@ export default {
         {
           image: require('../assets/images/menu3.png'),
           title: '商品购买',
-          url: '/goods'
+          url: '/goods/list'
         },
         { image: require('../assets/images/menu4.png'), title: '留言反馈' },
         { image: require('../assets/images/menu5.png'), title: '视频专区' },

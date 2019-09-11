@@ -9,7 +9,6 @@ import Footer from './components/footer/Footer.vue'
 import './assets/font/iconfont.css'
 // 引入全局样式
 import './assets/state.css'
-
 // 导入按需加载的 vant 组件
 import './plugins/vant'
 
@@ -19,6 +18,20 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://www.liulongbin.top:3005/'
 Vue.prototype.$http = axios
 
+
+// 创建过滤器将秒数过滤为年月日，时分秒
+Vue.filter('dateFormat', function (valStr) {
+  const dt = new Date(valStr)
+  const y = dt.getFullYear()
+  const m = (dt.getMonth() + 1 + '').padStart(2, '0')
+  const d = (dt.getDate() + '').padStart(2, '0')
+
+  const hh = (dt.getHours() + '').padStart(2, '0')
+  const mm = (dt.getMinutes() + '').padStart(2, '0')
+  const ss = (dt.getSeconds() + '').padStart(2, '0')
+
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+})
 // 挂载使用全局组件
 Vue.component('my-header', Header)
 Vue.component('my-footer', Footer)
@@ -39,20 +52,6 @@ Vue.filter('dateFormat', function (originVal) {
 
 Vue.config.productionTip = false
 
-// 格式化时间的过滤器
-Vue.filter('dateFormat', function (originVal) {
-  const dt = new Date(originVal)
-
-  const y = dt.getFullYear()
-  const m = (dt.getMonth() + 1 + '').padStart(2, '0')
-  const d = (dt.getDate() + '').padStart(2, '0')
-
-  const hh = (dt.getHours() + '').padStart(2, '0')
-  const mm = (dt.getMinutes() + '').padStart(2, '0')
-  const ss = (dt.getSeconds() + '').padStart(2, '0')
-
-  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
-})
 
 new Vue({
   router,

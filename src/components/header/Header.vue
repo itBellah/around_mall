@@ -8,24 +8,24 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       path: ''
     }
   },
-  created() {
+  created () {
     this.getPath()
   },
   methods: {
-    goBack() {
+    goBack () {
       this.$router.go(-1)
     },
-    getPath() {
+    getPath () {
       this.path = this.$route.path
     }
   },
   watch: {
-    $route(to, from) {
+    $route (to, from) {
       this.path = to.path
     }
   }

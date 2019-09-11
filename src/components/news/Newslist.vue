@@ -21,38 +21,38 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       list: [],
       isLoading: false,
       shows: false
-    };
+    }
   },
-  created() {
-    this.getNewsList();
+  created () {
+    this.getNewsList()
   },
   methods: {
-     // 下拉刷新页面 
-    onRefresh() {
-      this.getNewsList();
+    // 下拉刷新页面
+    onRefresh () {
+      this.getNewsList()
     },
-    getNewsList() {
+    getNewsList () {
       setTimeout(async () => {
-        var { data: res } = await this.$http.get("/api/getnewslist");
+        var { data: res } = await this.$http.get('/api/getnewslist')
         if (res.status !== 0) {
-          return this.$toast("获取资讯失败");
+          return this.$toast('获取资讯失败')
         }
-        this.list = res.message;
-        this.shows = false;
+        this.list = res.message
+        this.shows = false
         if (this.isLoading) {
-          this.$toast("刷新成功");
-          this.isLoading = false;
+          this.$toast('刷新成功')
+          this.isLoading = false
         }
-      }, 500);
+      }, 500)
     },
     // 点击跳转页面
-    detailClick(id) {
-      this.$router.push({ path: "/newslist/detail", query: { id: id } })
+    detailClick (id) {
+      this.$router.push({ path: '/newslist/detail', query: { id: id } })
     }
   }
 }
