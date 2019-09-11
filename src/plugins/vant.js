@@ -14,7 +14,18 @@ import {
   Overlay,
   Swipe,
   SwipeItem,
-  ImagePreview
+  ImagePreview,
+  NavBar,
+  Tabbar,
+  TabbarItem,
+  Icon,
+  SubmitBar,
+  Card,
+  Stepper,
+  Tag,
+  PullRefresh,
+  Loading,
+  Toast
 } from 'vant'
 import 'vant/lib/index.css'
 
@@ -32,3 +43,26 @@ Vue.use(Button)
   .use(Swipe)
   .use(SwipeItem)
   .use(ImagePreview)
+  .use(NavBar)
+  .use(Tabbar)
+  .use(TabbarItem)
+  .use(Swipe)
+  .use(SwipeItem)
+  .use(Lazyload)
+  .use(Grid)
+  .use(GridItem)
+  .use(Image)
+  .use(Icon)
+  .use(SubmitBar)
+  .use(Tab)
+  .use(Tabs)
+  .use(Card)
+  .use(Stepper)
+  .use(Tag)
+  .use(PullRefresh)
+  .use(List)
+  .use(Cell)
+  .use(Loading)
+  .use(Toast)
+
+// 挂载 Button 组件

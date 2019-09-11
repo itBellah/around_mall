@@ -4,24 +4,39 @@ import Router from 'vue-router'
 // import Index from './components/Index.vue'
 import picturesList from './components/pictures/picturesList.vue'
 import photoInfor from './components/pictures/photoInfor.vue'
+import Home from './components/Home.vue'
+import Index from './components/Index.vue'
+import Member from './components/member/Member.vue'
+import Shopcar from './components/shopcar/Shopcar.vue'
+import Contact from './components/contact/Contact.vue'
+import Newslist from './components/news/Newslist.vue'
+import Detail from './components/news/Detail.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
-    // { path: '/', redirect: '/index' },
-    // {
-    //   path: '/home',
-    //   redirect: '/index',
-    //   component: Home,
-    //   children: [{ path: '/index', component: Index }]
-    // },
-    { path: '/photo/list', component: picturesList },
+    { path: '/', redirect: '/index' },
     {
-      path: '/photo/Info/:id',
-      component: photoInfor,
-      props: true
-      // children: [{ path: '/photo/Info', component: photoInfor }]
-    }
+      path: '/home',
+      redirect: '/index',
+      component: Home,
+      children: [
+        { path: '/index', component: Index },
+        { path: '/member', component: Member },
+        { path: '/contact', component: Contact },
+        { path: '/newslist', component: Newslist },
+        { path: '/newslist/detail', component: Detail },
+        { path: '/photo/list', component: picturesList },
+        {
+          path: '/photo/Info/:id',
+          component: photoInfor,
+          props: true
+        }
+      ]
+    },
+    { path: '/shopcar', component: Shopcar }
   ]
 })
+
+export default router

@@ -1,8 +1,6 @@
 <template>
   <!-- 图片详情页 -->
   <div>
-    <!-- 头部 -->
-    <!-- <my-header></my-header> -->
     <!-- 图片标题 -->
     <div class="header"
          v-for="item in imginforList"
@@ -32,8 +30,6 @@
                        @change="onChange">
       <template v-slot:index>第{{ index }}页</template>
     </van-image-preview>
-    <!-- 底部 -->
-    <!-- <my-footer></my-footer> -->
   </div>
 </template>
 <script>
@@ -95,10 +91,10 @@ export default {
     color: #8f8f94;
     justify-content: space-between;
     .time::before {
-      content: "发表时间: ";
+      content: '发表时间: ';
     }
     .click::before {
-      content: "点击: ";
+      content: '点击: ';
     }
   }
 }

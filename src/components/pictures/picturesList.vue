@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!-- 头部 -->
-    <!-- <my-header></my-header> -->
     <!-- 滑动Tab nav -->
     <van-tabs @click="changeTab">
       <van-tab v-for="item in  NavTagList"
@@ -24,10 +22,7 @@
           <p v-html="item.content"></p>
         </van-grid-item>
       </van-grid>
-
     </div>
-    <!-- 底部 -->
-    <!-- <my-footer></my-footer> -->
   </div>
 </template>
 <script>
