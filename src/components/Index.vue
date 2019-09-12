@@ -64,7 +64,6 @@ export default {
     // 获取轮播图请求参数
     async getBanImages () {
       const { data: res } = await this.$http.get('/api/getlunbo')
-      // console.log(res.message)
       this.banImages = res.message
     }
   }

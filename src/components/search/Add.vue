@@ -25,9 +25,6 @@ export default {
     //进行添加操作
     async add() {
       if (this.name.length === 0) return this.$notify('请输入内容')
-      // let name = this.value
-      // console.log(this.name);
-      //  name = this.name
       let { data: res } = await this.$http.post('/api/addproduct', {
         name: name
       })
@@ -39,9 +36,6 @@ export default {
     async onSearch() {
       if (this.name.trim().length === 0)
         return this.$notify.success('请输入内容')
-      // let name = this.value
-      // console.log(this.name);
-      //  name = this.name
       let { data: res } = await this.$http.post('/api/addproduct', {
         name: name
       })

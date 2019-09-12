@@ -54,7 +54,6 @@ export default {
         '/api/getcomments/'+this.shopid+'?pageindex=' + this.pageindex
       )
       if (res.status !== 0) {
-        console.log('获取评论信息失败')
       }
       this.CommentsList = res.message
     },
@@ -86,8 +85,8 @@ export default {
     // 加载更多的
     async getMore() {
       let { data: res } = await this.$http.get(
-        '/api/getcomments/'+ this.shopid +'pageindex=' + ++this.pageindex
-      )
+        '/api/getcomments/'+this.shopid+'?pageindex=' + ++this.pageindex
+      )      
       this.CommentsList.push(...res.message)
     }
   }

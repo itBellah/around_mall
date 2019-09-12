@@ -8,7 +8,7 @@
       </van-tab>
     </van-tabs>
     <!--Tab栏内容区域-->
-    <div>
+    <div class="tabCon">
       <van-grid :border="false"
                 v-for="item in  imgList"
                 :key="item.id"
@@ -44,11 +44,9 @@ export default {
     // 获取Tab栏标题
     async  getNavTag () {
       let { data: res } = await this.$http.get('api/getimgcategory')
-      // console.log(res)
       this.NavTagList = res.message
       let allTag = { title: '全部', id: 0 }
       this.NavTagList.unshift(allTag)
-      console.log(this.NavTagList)
     },
     // index索引,发请求
     async changeTab (index) {
@@ -56,7 +54,6 @@ export default {
       this.cateid = this.NavTagList[index].id
       let { data: res } = await this.$http.get('api/getimages/' + this.cateid)
       this.imgList = res.message
-      console.log(this.imgList)
     },
     // 获取图片跳转路由
     activeStatus (path) {
@@ -70,21 +67,21 @@ export default {
 
 <style lang="less" scoped>
 .van-image {
-  /deep/ img {
-    border-radius: 5px;
-  }
+  width:100%;
 }
+.van-tabs{position: fixed; width:100%;z-index:9;}
 p {
-  // bottom: 0;
-  /* top: 0; */
-  // position: absolute;
-  // width: 75%;
   background-color: rgba(0, 0, 0, 0.2);
-  height: 60px;
+  max-height: 90px;
+  line-height:30px;
+  padding:4px;
   overflow: hidden;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   display: -webkit-box;
-  border-radius: 5px;
+  margin:0;
 }
+/deep/.van-grid{padding-left:0!important;}
+/deep/.van-grid-item{padding-right:0!important;}
+.tabCon{padding-top:40px;}
 </style>

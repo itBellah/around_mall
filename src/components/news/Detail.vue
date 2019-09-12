@@ -29,7 +29,6 @@ export default {
     async getDetail () {
       const { data: res } = await this.$http.get('/api/getnew/' + this.$route.query.id)
       this.deta = res.message[0]
-      console.log(this.deta)
     }
   }
 }

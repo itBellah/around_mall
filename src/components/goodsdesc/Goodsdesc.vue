@@ -31,9 +31,7 @@ export default {
     async getImgList() {
       let { data: res } = await this.$http.get('/api/goods/getdesc/'+this.shopid)
       if (res.status !== 0) {
-        console.log('请求图片失败')
       }
-      // console.log(res.message)
       this.imgList = res.message
     }
   }

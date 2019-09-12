@@ -54,7 +54,6 @@ export default {
     async getList () {
       const { data: res } = await this.$http.get('api/getgoods?pageindex=1')
       this.addList = res.message
-      console.log(this.addList)
     },
     // 上拉刷新
     onRefresh () {
@@ -83,7 +82,6 @@ export default {
     goodMove (id) {
       window.localStorage.setItem('shopId', id)
       this.$router.push('/goods/detail/' + id)
-      console.log(id)
     }
   }
 }

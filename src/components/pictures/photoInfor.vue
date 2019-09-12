@@ -24,11 +24,12 @@
     <p v-for="(item,index) in imginforList"
        :key="index"
        v-html="item.content"></p>
+    <my-comments></my-comments>
     <!-- 图片预览 -->
     <van-image-preview v-model="show"
                        :images="ImagePreviwList"
                        @change="onChange">
-      <template v-slot:index>第{{ index }}页</template>
+      <template v-slot:index>第{{ index  }}页</template>
     </van-image-preview>
   </div>
 </template>
@@ -58,10 +59,7 @@ export default {
       // 图片详情获取
       let { data: res1 } = await this.$http.get('/api/getimageInfo/' + id)
       this.imginforList = res1.message
-      console.log(this.imginforList)
       this.thumimagesList = res.message
-      console.log(id)
-      console.log(this.thumimagesList)
     },
     // 获取预览图片路径
     getPreview () {
@@ -87,6 +85,7 @@ export default {
   }
   .note {
     display: flex;
+    padding:0 6px;
     font-size: 13px;
     color: #8f8f94;
     justify-content: space-between;

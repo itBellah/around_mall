@@ -2,7 +2,7 @@
   <div>
     <!-- 头部 -->
     <van-nav-bar
-      title="黑马程序员"
+      title="小飞鱼科技有限公司"
       left-text="返回"
       right-text="添加"
       left-arrow
@@ -82,14 +82,12 @@ export default {
     let arrs = JSON.parse(window.localStorage.getItem("key"));
     //判断是否是个空数组  
     this.arr = arrs||[];
-    // console.log(arrs)
   },
   methods: {
     // 获取搜索列表
     async getSeachlist() {
       let { data: res } = await this.$http.get("/api/getprodlist");
       this.seachList = res.message;
-      // console.log(res);
     },
     // 点击返回按钮
     onClickLeft() {
@@ -115,7 +113,6 @@ export default {
       let newArr = this.arr.filter(v => {
         return v == this.value;
       });
-      console.log(newArr)
       if (this.value == newArr.join()) return;
 
       this.arr.unshift(this.value);
@@ -133,7 +130,6 @@ export default {
     },
     // 点击确定按钮时
     con() {
-      console.log(123);
       this.$notify({ type: "success", message: "删除成功" });
       this.getSeachlist();
     },
@@ -143,8 +139,6 @@ export default {
     },
     // 点击tag时
     tag(i) {
-      // console.log(i);
-
       this.value = i;
     },
     // 点击清空本地存储

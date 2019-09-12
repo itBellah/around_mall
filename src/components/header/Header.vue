@@ -1,8 +1,8 @@
 <template>
 <!-- 公共头部 -->
   <div class="head">
-    <van-nav-bar title="鑫淼有限公司" v-if="path === '/index'" />
-    <van-nav-bar title="鑫淼有限公司" left-text="返回" left-arrow v-else @click-left="goBack" />
+    <van-nav-bar title="小飞鱼科技有限公司" v-if="path === '/index'" />
+    <van-nav-bar title="小飞鱼科技有限公司" left-text="返回" left-arrow v-else @click-left="goBack" />
   </div>
 </template>
 
@@ -21,6 +21,7 @@ export default {
       this.$router.go(-1)
     },
     getPath () {
+      // $route 表示(当前路由信息对象),解析为绝对路径
       this.path = this.$route.path
     }
   },
@@ -34,7 +35,9 @@ export default {
 
 <style lang="less" scoped>
 .head {
+  position: relative;;
   height: 46px;
+  z-index:9;
 }
 .van-nav-bar {
   width: 100%;

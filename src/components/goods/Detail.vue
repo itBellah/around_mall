@@ -68,13 +68,11 @@ export default {
     async getGoodImgArr () {
       const { data: resImg } = await this.$http.get('/api/getthumimages/' + this.shopid)
       this.detailImg = resImg.message
-    //   console.log(this.detailImg)
     },
     // 获取商品详情数据
     async detailList () {
       const { data: res } = await this.$http.get('/api/goods/getinfo/' + this.shopid)
       this.goodsetail = res.message[0]
-    //   console.log(this.goodsetail)
     },
     // 点击加入购物车按钮,出发事件
     addShop () {
